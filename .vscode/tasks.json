@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Clean",
+      "type": "shell",
+      "command": "rm ${workspaceFolder}/build/*"
+    },
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "clang++-20",
+      "args": [
+        "-ggdb", // Extra debugging information for use by LLDB.
+        "${cwd}/src/${fileBasename}",
+        "-o", "${workspaceFolder}/build/${fileBasenameNoExtension}",
+        "-pedantic-errors", // Disable prohibited compiler extensions for keep C++ standards.
+        "-std=c++23",
+        
+        // https://clang.llvm.org/docs/DiagnosticsReference.html
+        "-Werror",
+        "-Wall",
+        "-Weffc++",
+        "-Wextra",
+        "-Wconversion",
+        "-Wsign-conversion",
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Release",
+      "type": "shell",
+      "command": "clang++-20",
+      "args": [
+        "-O2", // Recommended Optimizations.
+        "-DNDEBUG", // Means Define No Debug ( Disables the macro assert used for debugging ).
+        "${cwd}/src/${fileBasename}",
+        "-o", "${workspaceFolder}/build/${fileBasenameNoExtension}", 
+        "-pedantic-errors", // Disable prohibited compiler extensions for keep C++ standards.
+        "-std=c++23",
+        
+        // https://clang.llvm.org/docs/DiagnosticsReference.html
+        "-Werror",
+        "-Wall",
+        "-Weffc++",
+        "-Wextra",
+        "-Wconversion",
+        "-Wsign-conversion",
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
