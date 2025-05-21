@@ -28,8 +28,15 @@
       "group": {
         "kind": "build",
         "isDefault": true
-      }
+      },
+      "presentation": {
+        "echo": true,
+        "focus": true,
+        "close": true,
+        "showReuseMessage": false,
+      },
     },
+
     {
       "label": "Release",
       "type": "shell",
@@ -50,7 +57,16 @@
         "-Wconversion",
         "-Wsign-conversion",
       ],
-      "problemMatcher": []
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "focus": true,
+        "close": true,
+        "showReuseMessage": false,
+      },
     }
   ]
 }
