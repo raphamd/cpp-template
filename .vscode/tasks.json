@@ -12,7 +12,7 @@
       "command": "clang++-20",
       "args": [
         "-ggdb", // Extra debugging information for use by LLDB.
-        "${cwd}/src/${fileBasename}",
+        "${workspaceFolder}/src/**.cpp",
         "-o", "${workspaceFolder}/build/${fileBasenameNoExtension}",
         "-pedantic-errors", // Disable prohibited compiler extensions for keep C++ standards.
         "-std=c++23",
@@ -44,7 +44,7 @@
       "args": [
         "-O2", // Recommended Optimizations.
         "-DNDEBUG", // Means Define No Debug ( Disables the macro assert used for debugging ).
-        "${cwd}/src/${fileBasename}",
+        "${workspaceFolder}/src/**.cpp",
         "-o", "${workspaceFolder}/build/${fileBasenameNoExtension}", 
         "-pedantic-errors", // Disable prohibited compiler extensions for keep C++ standards.
         "-std=c++23",
