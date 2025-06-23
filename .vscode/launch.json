@@ -2,13 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug",
+      "name": "CodeLLDB",
       "type": "lldb",
       "request": "launch",
       "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
       "args": [],
       "cwd": "${workspaceFolder}",
-      "preLaunchTask": "Build",
+      "preLaunchTask": "Debug",
     }
   ]
 }
