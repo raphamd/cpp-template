@@ -4,7 +4,7 @@
     {
       "label": "Debug",
       "type": "shell",
-      "command": "clang++-20",
+      "command": "clang++",
       "args": [
         "-ggdb", // Extra debugging information for use by LLDB.
         "${workspaceFolder}/src/**.cpp",
@@ -22,7 +22,7 @@
       ],
       "group": {
         "kind": "build",
-        "isDefault": true
+        "isDefault": false
       },
       "presentation": {
         "echo": true,
@@ -38,7 +38,7 @@
     {
       "label": "Release",
       "type": "shell",
-      "command": "clang++-20",
+      "command": "clang++",
       "args": [
         "-O2", // Recommended Optimizations.
         "-DNDEBUG", // Means Define No Debug ( Disables the macro assert used for debugging ).
@@ -57,7 +57,7 @@
       ],
       "group": {
         "kind": "build",
-        "isDefault": false
+        "isDefault": true
       },
       "presentation": {
         "echo": true,
